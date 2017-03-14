@@ -104,6 +104,9 @@ var EventListComponent = (function () {
     EventListComponent.prototype.ngOnInit = function () {
         console.log('in OnInit');
     };
+    EventListComponent.prototype.onRatingClicked = function (message) {
+        this.pageTitle = 'Event List: ' + message;
+    };
     EventListComponent = __decorate([
         core_1.Component({
             selector: 'el-events',

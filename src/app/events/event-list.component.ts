@@ -103,4 +103,8 @@ export class EventListComponent implements OnInit {
   ngOnInit(): void {
     console.log('in OnInit');
   }
+
+  onRatingClicked(message: string): void {
+    this.pageTitle = 'Event List: ' + message;
+  }
 }

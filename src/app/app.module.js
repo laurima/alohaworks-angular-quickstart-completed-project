@@ -14,13 +14,14 @@ var forms_1 = require('@angular/forms');
 var app_component_1 = require('./app.component');
 var event_list_component_1 = require('./events/event-list.component');
 var event_filter_pipe_1 = require('./events/event-filter.pipe');
+var thumb_component_1 = require('./shared/thumb.component');
 var AppModule = (function () {
     function AppModule() {
     }
     AppModule = __decorate([
         core_1.NgModule({
             imports: [platform_browser_1.BrowserModule, forms_1.FormsModule],
-            declarations: [app_component_1.AppComponent, event_list_component_1.EventListComponent, event_filter_pipe_1.EventFilterPipe],
+            declarations: [app_component_1.AppComponent, event_list_component_1.EventListComponent, event_filter_pipe_1.EventFilterPipe, thumb_component_1.ThumbComponent],
             bootstrap: [app_component_1.AppComponent]
         }), 
         __metadata('design:paramtypes', [])
