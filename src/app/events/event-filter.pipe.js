@@ -12,10 +12,10 @@ var core_1 = require('@angular/core');
 var EventFilterPipe = (function () {
     function EventFilterPipe() {
     }
-    EventFilterPipe.prototype.transform = function (value, args) {
-        var filter = args[0] ? args[0].toLocaleLowerCase() : null;
-        return filter ? value.filter(function (event) {
-            return event.name.toLocaleLowerCase().indexOf(filter) != -1;
+    EventFilterPipe.prototype.transform = function (value, filterBy) {
+        filterBy = filterBy ? filterBy.toLocaleLowerCase() : null;
+        return filterBy ? value.filter(function (event) {
+            return event.name.toLocaleLowerCase().indexOf(filterBy) !== -1;
         }) : value;
     };
     EventFilterPipe = __decorate([

@@ -6,10 +6,10 @@ import { IEvent } from './event'
 })
 
 export class EventFilterPipe implements PipeTransform {
-  transform(value: IEvent[], args: string[]): IEvent[] {
-    let filter: string = args[0] ? args[0].toLocaleLowerCase() : null;
-    return filter ? value.filter((event: IEvent) =>
-      event.name.toLocaleLowerCase().indexOf(filter) != -1) : value;
-  }
+  transform(value: IEvent[], filterBy: string): IEvent[] {
+        filterBy = filterBy ? filterBy.toLocaleLowerCase() : null;
+        return filterBy ? value.filter((event: IEvent) =>
+            event.name.toLocaleLowerCase().indexOf(filterBy) !== -1) : value;
+          }
 
 }

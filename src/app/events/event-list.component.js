@@ -9,7 +9,6 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var event_filter_pipe_1 = require('./event-filter.pipe');
 var EventListComponent = (function () {
     function EventListComponent() {
         this.pageTitle = 'Event List';
@@ -109,8 +108,7 @@ var EventListComponent = (function () {
         core_1.Component({
             selector: 'el-events',
             templateUrl: 'app/events/event-list.component.html',
-            styleUrls: ['app/events/event-list.component.css'],
-            pipes: [event_filter_pipe_1.EventFilterPipe]
+            styleUrls: ['app/events/event-list.component.css']
         }), 
         __metadata('design:paramtypes', [])
     ], EventListComponent);

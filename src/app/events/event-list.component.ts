@@ -5,8 +5,7 @@ import { EventFilterPipe } from './event-filter.pipe';
 @Component({
   selector: 'el-events',
   templateUrl: 'app/events/event-list.component.html',
-  styleUrls: ['app/events/event-list.component.css'],
-  pipes: [EventFilterPipe]
+  styleUrls: ['app/events/event-list.component.css']
 })
 
 export class EventListComponent implements OnInit {
