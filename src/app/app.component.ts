@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { EventListComponent} from './events/event-list.component';
 import { EventService } from './events/event.service';
+import { Routes, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'events-app',

@@ -9,10 +9,12 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var router_1 = require('@angular/router');
 var event_service_1 = require('./event.service');
 var EventListComponent = (function () {
-    function EventListComponent(_eventService) {
+    function EventListComponent(_eventService, router) {
         this._eventService = _eventService;
+        this.router = router;
         this.pageTitle = 'Event List';
         this.imageWidth = 50;
         this.imageMargin = 2;
@@ -29,13 +31,16 @@ var EventListComponent = (function () {
     EventListComponent.prototype.onRatingClicked = function (message) {
         this.pageTitle = 'Event List: ' + message;
     };
+    EventListComponent.prototype.onEventClicked = function (event) {
+        this.router.navigate(['/event', event], { queryParams: { event: event } });
+    };
     EventListComponent = __decorate([
         core_1.Component({
             selector: 'el-events',
             templateUrl: 'app/events/event-list.component.html',
             styleUrls: ['app/events/event-list.component.css']
         }), 
-        __metadata('design:paramtypes', [event_service_1.EventService])
+        __metadata('design:paramtypes', [event_service_1.EventService, router_1.Router])
     ], EventListComponent);
     return EventListComponent;
 }());

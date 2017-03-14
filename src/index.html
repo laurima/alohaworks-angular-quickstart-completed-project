@@ -19,6 +19,9 @@
     <!-- Required for HTTP -->
     <script src="node_modules/angular2/bundles/http.dev.js"></script>
 
+    <!-- Required for routing -->
+    <script src="node_modules/angular2/bundles/router.dev.js"></script>
+
     <script src="systemjs.config.js"></script>
     <script>
         System.import('main.js').catch(function(err) {
@@ -29,6 +32,7 @@
 
 <body>
     <events-app>Loading AppComponent content here ...</events-app>
+    <router-outlet></router-outlet>
 </body>
 
 </html>

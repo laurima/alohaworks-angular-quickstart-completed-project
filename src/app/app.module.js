@@ -12,18 +12,39 @@ var core_1 = require('@angular/core');
 var platform_browser_1 = require('@angular/platform-browser');
 var forms_1 = require('@angular/forms');
 var http_1 = require('@angular/http');
+var router_1 = require('@angular/router');
 require('rxjs/Rx'); //Load all features
 var app_component_1 = require('./app.component');
 var event_list_component_1 = require('./events/event-list.component');
+var event_detail_component_1 = require('./events/event-detail.component');
 var event_filter_pipe_1 = require('./events/event-filter.pipe');
 var thumb_component_1 = require('./shared/thumb.component');
+var welcome_component_1 = require('./home/welcome.component');
+var appRoutes = [
+    { path: 'welcome', component: welcome_component_1.WelcomeComponent },
+    { path: 'events', component: event_list_component_1.EventListComponent },
+    { path: 'event/:id', component: event_detail_component_1.EventDetailComponent }
+];
 var AppModule = (function () {
     function AppModule() {
     }
     AppModule = __decorate([
         core_1.NgModule({
-            imports: [platform_browser_1.BrowserModule, forms_1.FormsModule, http_1.HttpModule],
-            declarations: [app_component_1.AppComponent, event_list_component_1.EventListComponent, event_filter_pipe_1.EventFilterPipe, thumb_component_1.ThumbComponent],
+            imports: [
+                platform_browser_1.BrowserModule,
+                forms_1.FormsModule,
+                http_1.HttpModule,
+                router_1.RouterModule.forRoot(appRoutes)
+            ],
+            declarations: //all components declared here
+            [
+                app_component_1.AppComponent,
+                event_list_component_1.EventListComponent,
+                event_detail_component_1.EventDetailComponent,
+                event_filter_pipe_1.EventFilterPipe,
+                thumb_component_1.ThumbComponent,
+                welcome_component_1.WelcomeComponent
+            ],
             bootstrap: [app_component_1.AppComponent]
         }), 
         __metadata('design:paramtypes', [])
