@@ -22,7 +22,9 @@ var EventListComponent = (function () {
         this.showImage = !this.showImage;
     };
     EventListComponent.prototype.ngOnInit = function () {
-        this.events = this._eventService.getEvents();
+        var _this = this;
+        this._eventService.getEvents()
+            .subscribe(function (events) { return _this.events = events; }, function (error) { return _this.errorMessage = error; });
     };
     EventListComponent.prototype.onRatingClicked = function (message) {
         this.pageTitle = 'Event List: ' + message;

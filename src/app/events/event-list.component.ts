@@ -15,6 +15,7 @@ export class EventListComponent implements OnInit {
   imageMargin: number = 2;
   showImage: boolean = false;
   events: IEvent[];
+  errorMessage: string;
 
 constructor(private _eventService: EventService) {
 
@@ -25,8 +26,10 @@ constructor(private _eventService: EventService) {
   }
 
   ngOnInit(): void {
-    this.events = this._eventService.getEvents();
-  }
+		this._eventService.getEvents()
+			.subscribe(events => this.events = events,
+			error => this.errorMessage = <any>error);
+	}
 
   onRatingClicked(message: string): void {
     this.pageTitle = 'Event List: ' + message;

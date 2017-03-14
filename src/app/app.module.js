@@ -11,6 +11,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var platform_browser_1 = require('@angular/platform-browser');
 var forms_1 = require('@angular/forms');
+var http_1 = require('@angular/http');
+require('rxjs/Rx'); //Load all features
 var app_component_1 = require('./app.component');
 var event_list_component_1 = require('./events/event-list.component');
 var event_filter_pipe_1 = require('./events/event-filter.pipe');
@@ -20,7 +22,7 @@ var AppModule = (function () {
     }
     AppModule = __decorate([
         core_1.NgModule({
-            imports: [platform_browser_1.BrowserModule, forms_1.FormsModule],
+            imports: [platform_browser_1.BrowserModule, forms_1.FormsModule, http_1.HttpModule],
             declarations: [app_component_1.AppComponent, event_list_component_1.EventListComponent, event_filter_pipe_1.EventFilterPipe, thumb_component_1.ThumbComponent],
             bootstrap: [app_component_1.AppComponent]
         }), 
