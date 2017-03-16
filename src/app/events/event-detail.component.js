@@ -8,27 +8,25 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
-var router_1 = require('@angular/router');
+var core_1 = require("@angular/core");
+var router_1 = require("@angular/router");
 var EventDetailComponent = (function () {
     function EventDetailComponent(_route, router) {
         this._route = _route;
         this.router = router;
         this.pageTitle = 'Event Detail';
     }
-    //TODO
     EventDetailComponent.prototype.ngOnInit = function () {
-        this.sub = this._route
-            .data
-            .subscribe(function (v) { return console.log(v); });
+        var _this = this;
+        this._route.params.subscribe(function (params) { _this.routeData = params.event; });
     };
-    EventDetailComponent = __decorate([
-        core_1.Component({
-            templateUrl: 'app/events/event-detail.component.html'
-        }), 
-        __metadata('design:paramtypes', [router_1.ActivatedRoute, router_1.Router])
-    ], EventDetailComponent);
     return EventDetailComponent;
 }());
+EventDetailComponent = __decorate([
+    core_1.Component({
+        templateUrl: 'app/events/event-detail.component.html'
+    }),
+    __metadata("design:paramtypes", [router_1.ActivatedRoute, router_1.Router])
+], EventDetailComponent);
 exports.EventDetailComponent = EventDetailComponent;
 //# sourceMappingURL=event-detail.component.js.map

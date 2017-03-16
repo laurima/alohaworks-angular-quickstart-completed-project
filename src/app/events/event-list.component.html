@@ -36,8 +36,8 @@
                         <img *ngIf='showImage' [src]='event.imageUrl' [title]='event.name' [style.width.px]='imageWidth' [style.margin.px]='imageMargin'>
                     </td>
                     <td>
-                        <!-- <a [routerLink]="['/event', event]">{{event.name}}</a> -->
-                            <a (click)="onEventClicked(event.code)"> {{event.name}} </a>
+                         <a [routerLink]="['/event', event]" routerLinkActive="active">{{event.name}}</a>
+                          <!--  <a (click)="onEventClicked(event.code)"> {{event.name}} </a>-->
                     </td>
                     <td>{{event.code | lowercase}}</td>
                     <td>{{event.date}}</td>

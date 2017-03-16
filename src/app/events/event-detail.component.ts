@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Observable } from 'rxjs/Observable';
+//import { Observable } from 'rxjs/Observable';
 
 @Component({
     templateUrl: 'app/events/event-detail.component.html'
@@ -16,9 +16,8 @@ export class EventDetailComponent {
  }
 
  //TODO
+ //https://toddmotto.com/angular-component-router
  ngOnInit() {
-   this.sub = this._route
-     .data
-     .subscribe(v => console.log(v));
+   this._route.params.subscribe((params) => {this.routeData = params.event})
  }
 }

@@ -32,7 +32,7 @@ var EventListComponent = (function () {
         this.pageTitle = 'Event List: ' + message;
     };
     EventListComponent.prototype.onEventClicked = function (event) {
-        this.router.navigate(['/event', event], { queryParams: { event: event } });
+        this.router.navigate(['/event', event]);
     };
     EventListComponent = __decorate([
         core_1.Component({

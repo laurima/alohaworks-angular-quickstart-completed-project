@@ -38,6 +38,6 @@ export class EventListComponent implements OnInit {
     }
 
     onEventClicked(event: string): void {
-        this.router.navigate(['/event', event], { queryParams: { event: event } });
+        this.router.navigate(['/event', event]);
     }
 }
